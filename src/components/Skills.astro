@@ -1,0 +1,62 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section class="box skills">
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="windows" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Mes systèmes d'exploitation / OS</h2>
+		<p>J'utilise principalement Arch Linux et Windows 10, avec une parfaite maîtrise de l'interface macOS, grâce à mon MacBook sur lequel j'ai également installé Arch Linux. En plus de cela, j'ai acquis de l'expérience avec Ubuntu, Kali Linux et Windows Server 2022. </p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="language-code" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Mes languages de programmation </h2>
+		<p>Je suis un étudiant polyvalent qui maîtrise les langages Python, C++, PHP et JavaScript. J'ai la capacité de relever différents défis de programmation grâce à ces compétences variées.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="tools" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Autres outils</h2>
+		<p>Je maîtrise la modélisation 3D à l'aide de logiciels tels que Blender, ainsi que le pack Adobe et Microsoft Office pour la création de contenus visuels et la gestion de projets. De plus, j'ai des compétences en réparation et en maintenance d'objets informatiques tels que les PC, ce qui me permet d'assurer leur bon fonctionnement.</p>
+	</div>
+</section>
+
+<style>
+	.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>

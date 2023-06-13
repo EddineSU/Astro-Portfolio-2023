@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | SAOULI Eddine" description="About SAOULI Eddine">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="À propos de Moi"
+				tagline="Merci de vous être arrêté. Lisez ci-dessous pour en savoir plus sur mon parcours."
+			>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Pourquoi la licence ? </h2>
+				<div class="content">
+					<p>
+						J'ai opté pour une licence en mathématiques-informatiques en raison de ma passion pour l'informatique dans laquel je baigne depuis l'enfance. Cependant, j'ai réalisé que le côté théorique prédominant de ce programme d'études ne correspondait pas entièrement à mes attentes. Je suis davantage attiré par la pratique et l'aspect concret de l'informatique.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Pourqoi le BTS SIO SISR ?</h2>
+				<div class="content">
+					<p>
+						C'est pourquoi je souhaite réaliser un BTS SIO (Services Informatiques aux Organisations) pour lequel j'ai été admis au <a href="https://www.ccicampus.fr/" target="_blank">CCI Campus</a>, plus précisément vers la spécialisation SISR (Solutions d'infrastructures, Systèmes et Réseaux). Ce choix me permettra de me concentrer davantage sur les aspects pratiques de l'informatique, tels que la gestion des systèmes, de la configuration des réseaux et la résolution de problèmes liés aux infrastructures informatiques.
+						Certain que cette formation me permettra d'acquérir les compétences nécessaires pour devenir un professionnel accompli.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Pourquoi l'alternance ?</h2>
+				<div class="content">
+					<p>
+						La formation en alternance m'attire pour son équilibre entre théorie et pratique, me permettant d'acquérir des compétences réelles tout en suivant mes cours. Cela facilitera ma transition vers le monde professionnel et renforcera mon employabilité. De plus, l'expérience en entreprise me permettra de développer mon réseau professionnel et de bénéficier d'un soutien et de conseils avisés. Sur le plan financier, travailler en alternance me permettra de subvenir à mes besoins tout en poursuivant mes études. En somme, cette formation en alternance représente l'opportunité idéale pour mettre en pratique mes connaissances et me préparer efficacement à ma carrière dans le domaine de l'informatique.
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
